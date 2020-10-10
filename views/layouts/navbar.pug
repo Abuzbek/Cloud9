@@ -19,3 +19,30 @@ nav#nav.navbar.navbar-expand-lg.navbar-light.grey.lighten-5
             a.nav-link(href='#') Our work
           li.nav-item
             a.nav-link(href='#') Contact us
+          if user
+            if user.username == 'AbuzCoder'
+              li.nav-item
+                a#navbarDropdownMenuLink1.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  i.far.fa-user.mr-2
+                  span.clearfix.d-none.d-sm-inline-block Admin
+                .dropdown-menu.dropdown-menu-right(aria-labelledby='navbarDropdownMenuLink1')
+                  a.dropdown-item.waves-effect(href='/admin') Admin honasi
+                  a.dropdown-item.waves-effect(href='/' ) Bosh Sahifa
+            else      
+              li.nav-item.dropdown
+                a#navbarDropdownMenuLink1.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  i.far.fa-user.mr-2
+                  span.clearfix.d-none.d-sm-inline-block Account
+                .dropdown-menu.dropdown-menu-right(aria-labelledby='navbarDropdownMenuLink1')
+                  a.dropdown-item.waves-effect(href='/logout') Chiqish
+                  a.dropdown-item.waves-effect(href=`/delete/${user.id}`) Accountni o'chirish
+                  a.dropdown-item.waves-effect(href='!#' ) Accountga kirish 
+                  
+          if !user
+            li.nav-item.dropdown
+              a#navbarDropdownMenuLink.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                i.far.fa-sign-in.mr-2
+                | Kirish
+              .dropdown-menu.dropdown-menu-right(aria-labelledby='navbarDropdownMenuLink')
+                a.dropdown-item.waves-effect(href='/signUp') Sign up
+                a.dropdown-item.waves-effect(href='/login') Sign In  

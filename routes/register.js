@@ -76,5 +76,15 @@ router.get('/logout', (req, res, next) => {
     req.flash('info', 'Muaffaqiyatli tizimdan chiqib ketdingiz')
     res.redirect('/login')
 })
+router.get('/delete/:id', (req, res, next) => {
+    Users.findByIdAndRemove(req.params.id, (err, user) => {
+        if (err) {
+            console.log(err);
+        } else {
+            req.flash('info ', `Muaffaqiyatli accountingiz o'chirildi`)
+            res.redirect('/')
+        }
+    })
 
+})
 module.exports = router;

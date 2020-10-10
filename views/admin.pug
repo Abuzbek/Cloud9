@@ -28,17 +28,20 @@ block content
       .container
           .row
               .col-lg-10.col-md-12.m-auto
-                    .card-body.px-lg-5.pt-0
-                      // Form
-                      form.pt-4.text-center(style='color: #757575;', method="POST" action="/admin" enctype="multipart/form-data")
-                          .md-form.mt-3
-                            input#materialSubscriptionFormPasswords.form-control(type='text' ,name="username")
-                            label.text-white(for='materialSubscriptionFormPasswords') Name
-                          .md-form.mt-3
-                            input#materialSubscriptionFormPasswords.form-control(type='text' ,name="username")
-                            label.text-white(for='materialSubscriptionFormPasswords') Name 
-                          .md-form
-                                label(for="fileInp" style="position:relative;").btn.btn-outline-info.btn-rounded.btn-block.my-4.mb-5.waves-effect
-                                  span Choose file
-                          input(type='file', id="fileInp" name="img").d-none
-                          button.btn.btn-outline-info.btn-rounded.btn-block.z-depth-0.my-4.waves-effect(type='submit') Send   
+                .card.w-100.elegant-color
+                  h5.card-header.elegant-color-dark.white-text.text-center.py-4
+                    strong Portfolioga bemalol qoshishingiz mumkin
+                  .card-body.px-lg-5.pt-0
+                    // Form
+                    form.pt-4.text-center(style='color: #757575;', method="POST" action="/admin" enctype="multipart/form-data")
+                        .md-form.mt-3
+                          input#materialSubscriptionFormPasswords.form-control(type='text' ,name="name")
+                          label.text-white(for='materialSubscriptionFormPasswords') Name
+                        .md-form.mt-3
+                          input#materialSubscriptionFormPasswords.form-control(type='text' ,name="link")
+                          label.text-white(for='materialSubscriptionFormPasswords') Link 
+                        .md-form
+                              label(for="fileInp" style="position:relative;").btn.btn-outline-info.btn-rounded.btn-block.my-4.mb-5.waves-effect
+                                span Choose file
+                        input(type='file', id="fileInp" name="img").d-none
+                        button.btn.btn-outline-info.btn-rounded.btn-block.z-depth-0.my-4.waves-effect(type='submit') Send   

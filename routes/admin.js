@@ -8,11 +8,17 @@ const upload = require('../helper/file')
 const eA = require('../helper/eA')
     /* GET home page. */
 router.get('/admin', eA, (req, res, next) => {
-    // Product.find({}, (err, product) => {
-    res.render('admin', {
-        title: 'ASSALOMU ALEKUM HOJAYIN',
-        // endNumber: `${product[product.length - 1].number}`
-        // });
+    Product.find({}, (err, product) => {
+        if (err) {
+            console.log(err);
+        }
+        else{
+            res.render('admin', {
+                title: 'ASSALOMU ALEKUM HOJAYIN',
+                product
+            })
+        }
+    
     })
 
 });
@@ -29,7 +35,7 @@ router.post('/admin', upload.single('img'), (req, res, next) => {
                 console.log(err);
             } else {
                 req.flash('info', `Maxsulotimiz muaffaqiyatli qo'shildi hohlasangiz kirib ko'ring`)
-                res.redirect('/')
+                res.redirect('/admin')
             }
         })
         console.log(req.file);

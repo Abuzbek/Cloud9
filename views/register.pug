@@ -1,0 +1,50 @@
+extends layout
+
+block content
+    section.register.pt-5
+     .container.pt-5
+        .row
+          .col-lg-6.col-md-8.col-12.m-auto
+            .card.w-100.elegant-color
+              h5.card-header.elegant-color-dark.white-text.text-center.py-4
+                strong Sign up
+              // Card content
+              .card-body.px-lg-5.pt-0
+                // Form
+                form.text-center(style='color: #757575;', action='/signUp' , method="POST")
+                  .form-row
+                    .col
+                      // First name
+                      .md-form
+                        input#materialRegisterFormFirstName.form-control(type='text' , value="" , name="username")
+                        label(for='materialRegisterFormFirstName') First name
+                  // E-mail
+                  .md-form.mt-0
+                    input#materialRegisterFormEmail.form-control(type='email' , name="email")
+                    label(for='materialRegisterFormEmail') E-mail
+                  // Password
+                  .md-form
+                    input#materialRegisterFormPassword.form-control(type='password', name="password" , aria-describedby='materialRegisterFormPasswordHelpBlock')
+                    label(for='materialRegisterFormPassword') Password
+                    small#materialRegisterFormPasswordHelpBlock.form-text.text-muted.mb-4
+                      | At least 8 characters and 1 digit
+                  button.btn.btn-outline-info.btn-rounded.btn-block.my-4.waves-effect.z-depth-0(type='submit') Sign Up
+                  // Social register
+                  p or sign up with:
+                  a.btn-floating.btn-fb.btn-sm(type='button')
+                    i.fab.fa-facebook-f
+                  a.btn-floating.btn-tw.btn-sm(type='button')
+                    i.fab.fa-twitter
+                  a.btn-floating.btn-li.btn-sm(type='button')
+                    i.fab.fa-linkedin-in
+                  a.btn-floating.btn-git.btn-sm(type='button')
+                    i.fab.fa-github
+                  hr
+                  // Terms of service
+                  p
+                    | By clicking
+                    em Sign up
+                    |  you agree to our
+                    a(href='#!', target='_blank').ml-2 terms of service
+                // Form
+            // Material form register

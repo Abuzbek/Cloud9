@@ -1,0 +1,44 @@
+extends layout
+
+block content
+    if user.username != 'AbuzCoder'
+        .container
+          .row.pt-5
+              .col-lg-6.col-md-8.m-auto.pt-5
+                  .card.w-100.elegant-color
+                    h5.card-header.elegant-color-dark.info-color.white-text.text-center.py-4
+                      strong Siz rostan Adminmisiz 
+                    // Card content
+                    .card-body.px-lg-5
+                      // Form
+                      form.text-center(style='color: #757575;', action='/login' , method="post")
+                        .md-form.mt-3
+                          input#materialSubscriptionFormPasswords.form-control(type='text' , name="username")
+                          label.text-white(for='materialSubscriptionFormPasswords') Name
+                        // E-mai
+                        .md-form
+                          input#materialSubscriptionFormEmail.form-control(type='password' , name="password")
+                          label.text-white(for='materialSubscriptionFormEmail') password
+                        // Sign in button
+                        button.btn.btn-outline-info.btn-rounded.btn-block.z-depth-0.my-4.waves-effect(type='submit') Sign in
+                        a(href="/").text-success Agar siz admin bolmasangiz bemalol chiqib keting urunmang barbir buza olmaysiz
+                      // Form
+                    // Material form subscription
+    if user.username == 'AbuzCoder'
+      .container
+          .row
+              .col-lg-10.col-md-12.m-auto
+                    .card-body.px-lg-5.pt-0
+                      // Form
+                      form.pt-4.text-center(style='color: #757575;', method="POST" action="/admin" enctype="multipart/form-data")
+                          .md-form.mt-3
+                            input#materialSubscriptionFormPasswords.form-control(type='text' ,name="username")
+                            label.text-white(for='materialSubscriptionFormPasswords') Name
+                          .md-form.mt-3
+                            input#materialSubscriptionFormPasswords.form-control(type='text' ,name="username")
+                            label.text-white(for='materialSubscriptionFormPasswords') Name 
+                          .md-form
+                                label(for="fileInp" style="position:relative;").btn.btn-outline-info.btn-rounded.btn-block.my-4.mb-5.waves-effect
+                                  span Choose file
+                          input(type='file', id="fileInp" name="img").d-none
+                          button.btn.btn-outline-info.btn-rounded.btn-block.z-depth-0.my-4.waves-effect(type='submit') Send   

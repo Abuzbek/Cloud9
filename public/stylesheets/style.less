@@ -1,0 +1,46 @@
+@font-face{
+  font-family: 'helios';
+  src: url('../webfonts/Helios Regular.ttf');
+}
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Inconsolata', monospace;
+  background: #fff;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+@import './header/index.less';
+@import './sections/about.less';
+@import './sections/miniSection.less';
+@import './sections/tech.less';
+@import './sections/team.less';
+@import './sections/servis.less';
+
+.navbar{
+  .navbar-brand{
+    img{
+      height: 50px !important;
+    }
+  }
+  .nav-item{
+    .nav-link{
+      &.active{
+        color: #33b5e5 !important;
+        font-weight:500;
+      }
+    }
+  }
+}
+.alert-error{
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}

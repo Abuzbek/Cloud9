@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  .container
+      .row.pt-5
+          .col-lg-6.col-md-8.m-auto.pt-5
+              .card.w-100.elegant-color
+                h5.card-header.elegant-color-dark.info-color.white-text.text-center.py-4
+                  strong Sign In
+                // Card content
+                .card-body.px-lg-5
+                  // Form
+                  form.text-center(style='color: #757575;', action='/login' , method="post")
+                    .md-form.mt-3
+                      input#materialSubscriptionFormPasswords.form-control(type='text' , name="username")
+                      label.text-white(for='materialSubscriptionFormPasswords') Name
+                    // E-mai
+                    .md-form
+                      input#materialSubscriptionFormEmail.form-control(type='password' , name="password")
+                      label.text-white(for='materialSubscriptionFormEmail') password
+                    // Sign in button
+                    button.btn.btn-outline-info.btn-rounded.btn-block.z-depth-0.my-4.waves-effect(type='submit') Sign in
+                    a(href="/signUp").text-success Sizda hali account mavjud emasmi
+                  // Form
+              // Material form subscription

@@ -1,0 +1,63 @@
+header{
+    min-height:655px;
+    width:100%;
+    overflow: hidden;
+    position: relative;
+    .cloud{
+      position: absolute;
+      width: 100%;
+      top:0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background: url('../images/cloud.png');
+      animation: animate 60s linear infinite;
+      opacity: 0.7;
+      z-index: 2;
+    }
+    canvas{
+      position: absolute;
+      width: 100%;
+      top:0;
+      left: 0;
+      height: 100%;
+      z-index: 1;
+    }
+    .container{
+      position: absolute;
+      width: 100%;
+      top:0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      z-index: 3;
+      .header__title{
+        height:100%;
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h1{
+          font-family: 'helios';
+          font-size: 100px;
+          &:hover{
+            animation: .7s pulse linear forwards;
+          }
+        }
+        h2{
+          font-family: 'helios';
+          font-weight: bold;
+          color: #0080b3;
+        }
+      }
+    }
+  }
+@keyframes animate{
+  0%{
+    background-position: 0px;
+  }
+  100%{
+    background-position: 5440px;
+  }
+}

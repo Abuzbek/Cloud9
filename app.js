@@ -10,7 +10,7 @@ const cookieParser = require('cookie-parser');
 
 const logger = require('morgan');
 //  ======= ENV ===========
-const env = require('dotenv').config()
+// const env = require('dotenv').config()
     //  ============== ENV =========== 
 const lessMiddleware = require('less-middleware');
 //  ====== validators ============
@@ -63,7 +63,7 @@ app.use(function(req, res, next) {
 // ============== express-sessions ==============
 
 app.use(session({
-    secret: process.env.SESSION_KEY,
+    secret: "MAXFIY KALIT SOZ",
     resave: true,
     saveUninitialized: true,
     cookie: {
